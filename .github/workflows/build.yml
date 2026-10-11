@@ -93,7 +93,7 @@ jobs:
           ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
           ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
           ANDROID_KEYSTORE_TYPE: ${{ secrets.ANDROID_KEYSTORE_TYPE }}
-      - run: python scripts/build_android.py --abi arm64-v8a ${{ matrix.arguments }}
+      - run: python scripts/build_android.py --abi armeabi-v7a ${{ matrix.arguments }}
       - name: Remove signing files
         if: always()
         run: python scripts/configure_signing.py --clean
